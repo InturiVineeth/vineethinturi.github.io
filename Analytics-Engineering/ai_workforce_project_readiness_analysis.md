@@ -1,5 +1,15 @@
 # AI Workforce & Project Readiness Analysis
 
+
+## My Role & Contribution
+
+In this analytics project, I worked on structuring project, employee, timesheet, payroll, client, skills, and training-related data into a business-ready analytical framework. The goal was to help leadership understand workforce allocation, project effort, client workload, delivery risk, and AI-readiness opportunities across consulting projects.
+
+My work focused on analyzing data from multiple operational sources, cleaning inconsistent project and employee records, standardizing client and technology fields, building SQL logic for project-hour and payroll analysis, and designing metrics that could support leadership reporting and AI investment planning.
+
+The analysis helped identify which projects had high manual effort, which employees had strong exposure to data/cloud/automation technologies, and which project areas could be evaluated for future AI Agent enablement or workforce upskilling.
+
+
 ## Project Overview
 
 In an IT consulting environment, leadership often needs visibility into how employees are allocated across projects, how many hours are being invested, which clients consume the most effort, what technologies are being used, and where automation or AI Agent opportunities may exist.
@@ -928,25 +938,7 @@ KPIs:
 
 ---
 
-# 10. Best Practices Used
-
-This project demonstrates:
-
-- Data cleaning and standardization
-- CTE-based SQL transformation
-- Source-to-target style validation
-- Timesheet and payroll integration
-- Project profitability analysis
-- Workforce skill analysis
-- AI-readiness scoring
-- AI opportunity scoring
-- Employee-to-use-case matching
-- Dashboard-ready metric design
-- Business-facing recommendation logic
-
----
-
-# 11. Portfolio Summary
+# 10. Portfolio Summary
 
 This case study demonstrates how consulting operations data can be transformed into a strategic analytics framework for AI investment planning.
 
@@ -961,8 +953,14 @@ The analysis helps leadership understand:
 This framework connects business operations, workforce analytics, project management, payroll, skills data, and AI-readiness scoring into one decision-support model.
 ```
 
-Commit message:
+## Internal AI Agent Opportunities Supported by This Analysis
 
-```text
-Add AI workforce project readiness analysis
-```
+This analytics work supports planning and prioritization for internal AI Agent use cases such as:
+
+- **AI Use Case Discovery Agent:** Identifies repetitive, manual, documentation-heavy, or reporting-heavy project work that could be automated.
+- **Employee AI Training Recommendation Agent:** Recommends employees for AI upskilling based on project history, education, tools, skills, certifications, and training exposure.
+- **Project Staffing Recommendation Agent:** Matches employees to future AI or automation projects using client familiarity, technology exposure, project history, and prior delivery experience.
+- **Project Delivery Risk Agent:** Flags projects with high effort, low completion progress, staffing risk, timeline risk, or rising payroll cost.
+- **Data Quality Review Agent:** Reviews duplicate records, missing fields, source-to-target checks, validation failures, and reporting readiness before dashboards are published.
+
+This analysis does not represent a production AI Agent build. It represents the analytics and data-readiness work needed before a company can decide which AI Agents to build, which teams should support them, and how training or implementation timelines should be planned.
