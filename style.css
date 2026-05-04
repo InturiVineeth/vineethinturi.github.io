@@ -6,6 +6,7 @@ body {
   line-height: 1.6;
 }
 
+/* Sticky Navigation */
 nav {
   background-color: #111827;
   padding: 16px 24px;
@@ -28,12 +29,65 @@ nav a:hover {
   color: #d1d5db;
 }
 
+/* Main Layout */
 main {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 60px 24px;
+  padding: 42px 24px 60px;
 }
 
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #111827, #1f2937);
+  color: white;
+  padding: 34px 36px;
+  border-radius: 16px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.10);
+}
+
+.hero h1 {
+  color: white;
+  font-size: 44px;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.hero h2 {
+  color: #e5e7eb;
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  color: #d1d5db;
+  font-size: 17px;
+  max-width: 900px;
+  margin-bottom: 12px;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+}
+
+.hero-buttons a {
+  display: inline-block;
+  margin-right: 12px;
+  padding: 10px 18px;
+  background-color: white;
+  color: #111827;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.hero-buttons a:hover {
+  background-color: #e5e7eb;
+}
+
+/* General Text */
 h1 {
   font-size: 48px;
   margin-bottom: 8px;
@@ -52,6 +106,10 @@ h3 {
   color: #111827;
 }
 
+h4 {
+  color: #111827;
+}
+
 p {
   font-size: 18px;
   margin-bottom: 18px;
@@ -66,7 +124,7 @@ li {
   font-size: 17px;
 }
 
-/* Homepage action buttons */
+/* Homepage Action Buttons */
 main > p a {
   display: inline-block;
   margin-top: 20px;
@@ -260,12 +318,8 @@ main > p a:hover {
 }
 
 @media (max-width: 768px) {
-  h1 {
-    font-size: 36px;
-  }
-
-  h2 {
-    font-size: 21px;
+  main {
+    padding: 32px 18px 48px;
   }
 
   nav a {
@@ -273,100 +327,27 @@ main > p a:hover {
     margin: 6px 10px;
   }
 
+  .hero {
+    padding: 28px 22px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero h2 {
+    font-size: 20px;
+  }
+
   .dashboard-grid {
     grid-template-columns: 1fr;
   }
 
-  main {
-    padding: 40px 18px;
-  }
-}
-
-.hero {
-  background: linear-gradient(135deg, #111827, #1f2937);
-  color: white;
-  padding: 56px 44px;
-  border-radius: 18px;
-  margin-bottom: 48px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-}
-
-.hero h1 {
-  color: white;
-  font-size: 52px;
-  margin-bottom: 10px;
-}
-
-.hero h2 {
-  color: #e5e7eb;
-  font-size: 24px;
-  font-weight: 500;
-  margin-bottom: 24px;
-}
-
-.hero p {
-  color: #d1d5db;
-  font-size: 18px;
-  max-width: 900px;
-}
-
-.hero-buttons {
-  margin-top: 28px;
-}
-
-.hero-buttons a {
-  display: inline-block;
-  margin-right: 12px;
-  padding: 12px 20px;
-  background-color: white;
-  color: #111827;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 700;
-}
-
-.hero-buttons a:hover {
-  background-color: #e5e7eb;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    padding: 40px 24px;
+  h1 {
+    font-size: 36px;
   }
 
-  .hero h1 {
-    font-size: 38px;
-  }
-
-  .hero h2 {
+  h2 {
     font-size: 21px;
   }
-
-  .hero-buttons a {
-    margin-bottom: 10px;
-  }
-}
-
-
-footer {
-  background-color: #111827;
-  color: #d1d5db;
-  text-align: center;
-  padding: 28px 20px;
-  margin-top: 40px;
-}
-
-footer p {
-  font-size: 14px;
-  margin: 6px 0;
-}
-
-footer a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-footer a:hover {
-  color: #d1d5db;
 }
