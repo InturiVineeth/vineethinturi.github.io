@@ -1,17 +1,14 @@
 /* 
 ===============================================================================
 Project: Product Performance, Pricing & Margin Analysis
-Author: Vineeth Inturi
 Purpose:
     This SQL example demonstrates how to combine sales, inventory, cost, retail
     price, package price, and product hierarchy data to analyze category-level
     profitability, gross margin, and product performance.
-
 Notes:
     - This is a recreated portfolio example using generic table and column names.
     - No confidential company data, table names, pricing, or product identifiers
       are included.
-    - Logic is designed in a Snowflake-style SQL format.
 ===============================================================================
 */
 
