@@ -32,3 +32,37 @@
     grid-template-columns: 1fr;
   }
 }
+.methodology-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+  margin-bottom: 44px;
+}
+
+.methodology-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.methodology-card h4 {
+  font-size: 17px;
+  color: #111827;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.methodology-card p {
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .methodology-grid {
+    grid-template-columns: 1fr;
+  }
+}
