@@ -44,12 +44,7 @@ h2 {
 }
 
 h3 {
-  margin-top: 44px;
-  color: #111827;
-  font-size: 24px;
-}
-
-h4 {
+  margin-top: 40px;
   color: #111827;
 }
 
@@ -67,7 +62,7 @@ li {
   font-size: 17px;
 }
 
-/* Main homepage buttons */
+/* Homepage action buttons */
 main > p a {
   display: inline-block;
   margin-top: 20px;
