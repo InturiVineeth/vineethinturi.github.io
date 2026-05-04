@@ -16,15 +16,8 @@ flowchart LR
     D --> E
     E --> F
     E --> G
+```
 
-    
----
-
-## Text to Write Below the Diagram
-
-Use this directly under the diagram:
-
-```markdown
 ### Diagram Explanation
 
 This diagram represents the end-to-end analytics pipeline used to support the AI Workforce & Project Readiness Analysis.
