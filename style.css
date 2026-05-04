@@ -1,3 +1,120 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f7f9fc;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+nav {
+  background-color: #111827;
+  padding: 16px 24px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 18px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+nav a:hover {
+  color: #d1d5db;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 28px;
+}
+
+h3 {
+  margin-top: 44px;
+  color: #111827;
+  font-size: 24px;
+}
+
+h4 {
+  color: #111827;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+ul {
+  padding-left: 22px;
+}
+
+li {
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+/* Main homepage buttons */
+main > p a {
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 12px;
+  padding: 12px 20px;
+  background-color: #1f2937;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+main > p a:hover {
+  background-color: #374151;
+}
+
+/* Experience Snapshot */
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+.experience-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.experience-card h4 {
+  font-size: 18px;
+  color: #111827;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.experience-card p {
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: 0;
+}
+
+/* Technical Toolkit */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -27,11 +144,7 @@
   margin-bottom: 0;
 }
 
-@media (max-width: 900px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-}
+/* Project Methodology */
 .methodology-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -61,8 +174,111 @@
   margin-bottom: 0;
 }
 
+/* Dashboard Project Cards */
+.project-section {
+  margin-top: 48px;
+}
+
+.project-section h4 {
+  font-size: 22px;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 20px;
+}
+
+.dashboard-card {
+  background: white;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.dashboard-card img {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 16px;
+}
+
+.dashboard-card h5 {
+  font-size: 18px;
+  color: #111827;
+  margin: 8px 0 10px;
+}
+
+.dashboard-card p {
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: 0;
+}
+
+/* Contact Section */
+.contact-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 24px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.contact-card p {
+  font-size: 16px;
+  color: #4b5563;
+}
+
+.contact-card a {
+  display: inline-block;
+  margin-right: 12px;
+  margin-top: 10px;
+  padding: 10px 18px;
+  background-color: #1f2937;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.contact-card a:hover {
+  background-color: #374151;
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 900px) {
+  .experience-grid,
+  .skills-grid,
   .methodology-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 21px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 6px 10px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding: 40px 18px;
   }
 }
