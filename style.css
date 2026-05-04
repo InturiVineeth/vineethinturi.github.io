@@ -342,3 +342,27 @@ main > p a:hover {
     margin-bottom: 10px;
   }
 }
+
+
+footer {
+  background-color: #111827;
+  color: #d1d5db;
+  text-align: center;
+  padding: 28px 20px;
+  margin-top: 40px;
+}
+
+footer p {
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  color: #d1d5db;
+}
