@@ -890,6 +890,34 @@ The analysis helps leadership understand:
 This framework connects business operations, workforce analytics, project management, payroll, skills data, and AI-readiness scoring into one decision-support model.
 ```
 
+## Executive Pipeline Flow Diagram
+
+```mermaid
+flowchart LR
+    A["Source Systems<br/>PostgreSQL, MySQL, Payroll SQL, Client/Project Data"]
+    B["Azure Data Factory<br/>Ingestion & Orchestration"]
+    C["Azure Data Lake<br/>Raw / Landing Zone"]
+    D["Azure Databricks<br/>Cleaning, Transformation, Validation"]
+    E["Curated Analytics Layers<br/>Bronze / Silver / Gold"]
+    F["Power BI / Tableau<br/>Dashboards & Reporting"]
+    G["AI Readiness Outputs<br/>Scoring, Recommendations, Opportunity Analysis"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    E --> G
+```
+This diagram represents the end-to-end analytics pipeline used to support the AI Workforce & Project Readiness Analysis.
+
+
+In an IT consulting analytics project, I worked on structuring employee, project, timesheet, payroll, client, skills, and training data into a reporting-ready framework. The goal was to help leadership understand project effort, workforce allocation, project cost, delivery risk, and AI-readiness opportunities. I worked with data from relational systems such as PostgreSQL/MySQL-style sources, payroll/cost summaries, and project tracking extracts. The data was ingested into Azure, cleaned and transformed using Databricks-style processing, validated through record count, duplicate, null, and business rule checks, and then used to create KPI tables for dashboards and AI-readiness scoring.
+
+The business value was that leadership could identify projects with high manual effort, employees with the right foundation for AI training, clients consuming the most delivery effort, and project areas that could be evaluated for AI Agent opportunities.
+
+
+
 ## Internal AI Agent Opportunities Supported by This Analysis
 
 This analytics work supports planning and prioritization for internal AI Agent use cases such as:
