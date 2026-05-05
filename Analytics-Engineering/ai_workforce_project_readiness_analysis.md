@@ -894,13 +894,13 @@ This framework connects business operations, workforce analytics, project manage
 
 ```mermaid
 flowchart LR
-    A["Source Systems<br/>PostgreSQL, MySQL, Payroll SQL, Client/Project Data"]
-    B["Azure Data Factory<br/>Ingestion & Orchestration"]
-    C["Azure Data Lake<br/>Raw / Landing Zone"]
-    D["Azure Databricks<br/>Cleaning, Transformation, Validation"]
-    E["Curated Analytics Layers<br/>Bronze / Silver / Gold"]
-    F["Power BI / Tableau<br/>Dashboards & Reporting"]
-    G["AI Readiness Outputs<br/>Scoring, Recommendations, Opportunity Analysis"]
+    A[Source Systems]
+    B[Azure Data Factory]
+    C[Azure Data Lake]
+    D[Azure Databricks]
+    E[Curated Analytics Layers]
+    F[Power BI / Tableau]
+    G[AI Readiness Outputs]
 
     A --> B
     B --> C
