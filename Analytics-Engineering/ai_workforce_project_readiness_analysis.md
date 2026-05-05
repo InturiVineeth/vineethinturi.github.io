@@ -888,7 +888,7 @@ The analysis helps leadership understand:
 - Where project cost, manual effort, and technology exposure indicate AI opportunity
 
 This framework connects business operations, workforce analytics, project management, payroll, skills data, and AI-readiness scoring into one decision-support model.
-```
+
 
 ## Executive Pipeline Flow Diagram
 
