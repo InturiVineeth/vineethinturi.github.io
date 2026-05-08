@@ -1,0 +1,53 @@
+# Python Pipeline Validation & Data Quality Monitoring Framework
+
+## Project Overview
+
+This project demonstrates how Python can support data engineering and BI teams by monitoring pipeline reliability, data quality, and reporting readiness across an Azure-based data platform.
+
+The workflow represents a real-world analytics environment where business users define reporting needs, Jira and Confluence are used for requirements and documentation, Azure Data Factory orchestrates ingestion, SHIR supports on-prem/SAP connectivity, ADLS Gen2 stores raw data, Databricks transforms data through Silver and Gold layers, and curated outputs are consumed in Power BI or Tableau.
+
+## Business Context
+
+Business users rely on dashboards for KPI tracking, reporting, and decision-making. If upstream pipelines fail, run late, load zero records, or produce mismatched data, downstream reports can become inaccurate.
+
+This framework helps identify those issues before the data is trusted for reporting.
+
+## End-to-End Flow
+
+```text
+Business Users / Stakeholders
+        ↓
+Business requirements, KPIs, reporting needs
+        ↓
+Jira / Confluence
+User stories, documentation, acceptance criteria, validation rules
+        ↓
+Data Engineering Team
+Technical requirements and pipeline implementation
+        ↓
+Source Systems
+SAP / on-prem systems / enterprise databases
+        ↓
+Azure Data Factory
+Pipeline orchestration
+        ↓
+Lookup Activity
+Reads metadata/control table for load instructions
+        ↓
+Copy Activity + SHIR
+Moves data from SAP/on-prem systems through Self-Hosted Integration Runtime
+        ↓
+ADLS Gen2 Bronze Layer
+Raw data lands as-is
+        ↓
+Databricks Silver Layer
+Data cleaning, standardization, validation
+        ↓
+Databricks Gold Layer
+Business-ready curated datasets
+        ↓
+Azure SQL / Synapse
+Structured downstream reporting layer
+        ↓
+Power BI / Tableau
+Dashboards, KPI tracking, ad hoc analysis, and business insights
