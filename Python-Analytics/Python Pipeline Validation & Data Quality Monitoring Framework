@@ -3,8 +3,6 @@
 <!--
 ===============================================================================
 Project: Python Pipeline Validation & Data Quality Monitoring Framework
-Author: Vineeth Inturi
-
 Purpose:
 This portfolio case study represents my exposure to data engineering workflows,
 pipeline validation, data quality monitoring, and reporting-readiness checks in
@@ -51,11 +49,9 @@ This project is positioned from the perspective of a data analyst with strong bu
 
 ---
 
-## Real-World Workflow Exposure
-
 The workflow I was exposed to followed this type of structure:
 
-```text
+```
 Business Users / Stakeholders
         ↓
 I gather business requirements, KPIs, and reporting needs
@@ -98,10 +94,6 @@ This flow represents how business reporting needs move from stakeholder conversa
 
 ---
 
-## Where Python Fits In
-
-Python is useful in this workflow because it can help automate monitoring and validation across pipeline outputs.
-
 In this project, Python is used to simulate how pipeline logs and data quality results can be reviewed before data is trusted for reporting.
 
 Python can help identify:
@@ -121,8 +113,6 @@ The goal is not to replace the pipeline tool. The goal is to use Python as a val
 
 ---
 
-## Where SQL Fits In
-
 SQL is used heavily for validating whether data is accurate, complete, and ready for reporting.
 
 SQL checks can be used to validate:
@@ -138,7 +128,7 @@ SQL checks can be used to validate:
 
 Example SQL use cases:
 
-```text
+```
 Compare source count vs target count
 Check duplicate product/store/date records
 Validate that mandatory fields are populated
@@ -157,7 +147,7 @@ Jira and Confluence are important because pipeline and reporting work is not onl
 
 ### Jira Usage
 
-Jira can be used to track:
+Jira is used to track:
 
 - Pipeline development tasks
 - Data validation stories
@@ -169,22 +159,9 @@ Jira can be used to track:
 - Production support issues
 - Enhancement requests
 
-Example Jira-style work item:
-
-```text
-Story: Validate SAP sales data load into Silver layer
-
-Acceptance Criteria:
-- Source and target record counts are reviewed
-- Required fields are populated
-- Duplicate checks are completed
-- Expected date range is available
-- Output is approved for dashboard testing
-```
-
 ### Confluence Usage
 
-Confluence can be used to document:
+Confluence has been used to document:
 
 - Business requirements
 - KPI definitions
@@ -208,7 +185,7 @@ If a pipeline fails, loads late, produces zero records, or brings mismatched dat
 
 Common business risks include:
 
-```text
+```
 Dashboard refresh completes with incomplete data
 Sales reporting does not match expected source totals
 Inventory output shows stale or missing records
@@ -249,7 +226,7 @@ Checks whether pipeline runs completed successfully.
 
 Example statuses:
 
-```text
+```
 Succeeded
 Failed
 Cancelled
@@ -259,7 +236,7 @@ No Data
 
 Business value:
 
-```text
+```
 Helps identify whether reporting datasets are safe to refresh or need review.
 ```
 
@@ -271,7 +248,7 @@ Checks whether a pipeline started late or ran longer than expected.
 
 Example:
 
-```text
+```
 Expected start time: 5:00 AM
 Actual start time: 6:20 AM
 SLA threshold: 60 minutes
@@ -280,7 +257,7 @@ Status: Late Start
 
 Business value:
 
-```text
+```
 Helps detect delayed dashboard refresh risk before users consume reports.
 ```
 
@@ -292,7 +269,7 @@ Checks whether a pipeline loaded zero records when records were expected.
 
 Example:
 
-```text
+```
 Pipeline: inventory_current_load
 Records loaded: 0
 Status: Review Required
@@ -300,7 +277,7 @@ Status: Review Required
 
 Business value:
 
-```text
+```
 Helps prevent dashboards from refreshing with missing or incomplete data.
 ```
 
@@ -314,7 +291,7 @@ Compares the number of records from the source system against the number of reco
 
 Example:
 
-```text
+```
 Source rows: 1,250,000
 Target rows: 1,249,980
 Difference: 20 records
@@ -323,7 +300,7 @@ Status: Review
 
 Business value:
 
-```text
+```
 Helps confirm whether the pipeline loaded complete data.
 ```
 
@@ -335,14 +312,14 @@ Identifies duplicate records that could inflate reporting metrics.
 
 Example:
 
-```text
+```
 Duplicate key:
 product_id + store_id + sales_date
 ```
 
 Business value:
 
-```text
+```
 Prevents sales, inventory, or PO metrics from being overstated.
 ```
 
@@ -354,7 +331,7 @@ Validates that critical fields are populated.
 
 Example mandatory fields:
 
-```text
+```
 product_id
 store_id
 sales_date
@@ -364,7 +341,7 @@ inventory_load_date
 
 Business value:
 
-```text
+```
 Ensures reporting datasets contain the required fields for dashboard logic.
 ```
 
@@ -376,7 +353,7 @@ Identifies when expected columns are missing, renamed, or changed in data type.
 
 Example:
 
-```text
+```
 Expected column: sales_amount
 Expected data type: numeric
 Actual data type: string
@@ -385,7 +362,7 @@ Status: Data Type Mismatch
 
 Business value:
 
-```text
+```
 Helps prevent downstream model failures when source structures change.
 ```
 
@@ -397,7 +374,7 @@ Not every issue has the same business impact. The framework classifies issues ba
 
 Example severity levels:
 
-```text
+```
 Critical
 High
 Medium
@@ -406,7 +383,7 @@ Low
 
 Example classification:
 
-```text
+```
 Critical:
 A business-critical pipeline failed or a required source column is missing.
 
@@ -428,7 +405,7 @@ This helps teams prioritize which issues need immediate review.
 
 The Python framework produces reporting-ready output files such as:
 
-```text
+```
 pipeline_sla_results.csv
 row_count_validation_results.csv
 schema_validation_results.csv
@@ -447,7 +424,7 @@ This framework supports reporting readiness by checking whether upstream data is
 
 It helps answer:
 
-```text
+```
 Did the pipeline run successfully?
 Did the data arrive on time?
 Did the expected number of rows load?
@@ -467,7 +444,7 @@ Business users usually do not care about pipeline internals. They care about whe
 
 This type of monitoring helps translate technical pipeline status into business-friendly information:
 
-```text
+```
 Sales data is ready for reporting
 Inventory data needs review
 PO data loaded late
@@ -485,7 +462,7 @@ This project demonstrates my exposure to the data engineering side of analytics 
 
 It shows how I can support the full reporting lifecycle:
 
-```text
+```
 Understand business requirements
 Translate KPIs into data requirements
 Work with Jira and Confluence for documentation and tracking
