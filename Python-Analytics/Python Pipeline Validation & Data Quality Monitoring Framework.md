@@ -93,16 +93,16 @@ Dashboards, KPI tracking, ad hoc analysis, and business insights
 
 ```mermaid
 flowchart LR
-    A["Business Users<br/>KPIs & Reporting Needs"]
-    B["Jira / Confluence<br/>Stories, Rules, Documentation"]
-    C["Source Systems<br/>SAP / On-Prem / Enterprise DBs"]
-    D["Azure Data Factory<br/>Lookup + Copy Activity"]
+    A["Business Users<br/>KPIs and Reporting Needs"]
+    B["Jira and Confluence<br/>Stories, Rules, Documentation"]
+    C["Source Systems<br/>SAP, On-Prem, Enterprise Databases"]
+    D["Azure Data Factory<br/>Lookup and Copy Activity"]
     E["SHIR<br/>Secure On-Prem Connectivity"]
-    F["ADLS Gen2<br/>Landing / Bronze"]
-    G["Databricks Silver<br/>Cleaning + Validation"]
+    F["ADLS Gen2<br/>Landing and Bronze"]
+    G["Databricks Silver<br/>Cleaning and Validation"]
     H["Databricks Gold<br/>Curated Business Data"]
-    I["Azure SQL / Synapse<br/>Structured Reporting Layer"]
-    J["Power BI / Tableau<br/>Dashboards & Insights"]
+    I["Azure SQL or Synapse<br/>Structured Reporting Layer"]
+    J["Power BI or Tableau<br/>Dashboards and Insights"]
 
     A --> B
     B --> C
@@ -114,9 +114,6 @@ flowchart LR
     H --> I
     I --> J
 ```
-
----
-
 ## Diagram Explanation
 
 This diagram shows how business reporting requirements move through a real-world data engineering and analytics workflow.
