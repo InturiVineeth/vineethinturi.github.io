@@ -1,53 +1,500 @@
 # Python Pipeline Validation & Data Quality Monitoring Framework
 
+<!--
+===============================================================================
+Project: Python Pipeline Validation & Data Quality Monitoring Framework
+Author: Vineeth Inturi
+
+Purpose:
+This portfolio case study represents my exposure to data engineering workflows,
+pipeline validation, data quality monitoring, and reporting-readiness checks in
+enterprise analytics environments.
+
+The project is recreated using generic field names and sample logic. It is written
+to demonstrate how I have worked around business requirements, pipeline outputs,
+data validation, documentation, and BI readiness without exposing confidential
+company data or internal systems.
+===============================================================================
+-->
+
+---
+
 ## Project Overview
 
-This project demonstrates how Python can support data engineering and BI teams by monitoring pipeline reliability, data quality, and reporting readiness across an Azure-based data platform.
+This project represents my hands-on exposure to data pipeline validation, data quality monitoring, and reporting-readiness checks in an enterprise analytics environment.
 
-The workflow represents a real-world analytics environment where business users define reporting needs, Jira and Confluence are used for requirements and documentation, Azure Data Factory orchestrates ingestion, SHIR supports on-prem/SAP connectivity, ADLS Gen2 stores raw data, Databricks transforms data through Silver and Gold layers, and curated outputs are consumed in Power BI or Tableau.
+Although my core role is Data Analyst / BI Developer, I worked closely with data engineering workflows where business reporting requirements had to be translated into technical data requirements. My work involved understanding what the business needed, reviewing how data moved through pipeline stages, validating outputs, documenting business rules, and helping ensure curated datasets were ready for Power BI, Tableau, SSRS, or ad hoc SQL reporting.
 
-## Business Context
+The purpose of this project is to show how I used both business knowledge and technical understanding to support reliable data delivery across pipeline-driven reporting environments.
 
-Business users rely on dashboards for KPI tracking, reporting, and decision-making. If upstream pipelines fail, run late, load zero records, or produce mismatched data, downstream reports can become inaccurate.
+---
 
-This framework helps identify those issues before the data is trusted for reporting.
+## My Role & Exposure
 
-## End-to-End Flow
+In this type of workflow, I was involved in the connection between business users, data engineering teams, and reporting teams.
+
+My exposure included:
+
+- Gathering business reporting requirements from stakeholders
+- Understanding KPI definitions and dashboard needs
+- Translating business needs into data requirements
+- Reviewing source-to-target validation outputs
+- Checking whether pipeline outputs matched business expectations
+- Supporting data quality checks before dashboard consumption
+- Working with SQL to validate records, duplicates, nulls, and business rules
+- Using Python-style monitoring logic to analyze pipeline logs and validation outputs
+- Documenting requirements, known issues, acceptance criteria, and validation rules
+- Supporting conversations between business users and data engineering teams
+- Helping confirm whether Silver/Gold layer datasets were ready for downstream reporting
+
+This project is positioned from the perspective of a data analyst with strong business understanding and working exposure to analytics engineering and data engineering processes.
+
+---
+
+## Real-World Workflow Exposure
+
+The workflow I was exposed to followed this type of structure:
 
 ```text
 Business Users / Stakeholders
         ↓
-Business requirements, KPIs, reporting needs
+I gather business requirements, KPIs, and reporting needs
         ↓
 Jira / Confluence
-User stories, documentation, acceptance criteria, validation rules
+User stories, acceptance criteria, data mappings, documentation, validation rules
         ↓
 Data Engineering Team
-Technical requirements and pipeline implementation
+I translate business needs into technical/data requirements
         ↓
 Source Systems
 SAP / on-prem systems / enterprise databases
         ↓
-Azure Data Factory
-Pipeline orchestration
+Azure Data Factory Pipeline
+Pipeline orchestration and scheduled ingestion
         ↓
 Lookup Activity
-Reads metadata/control table for load instructions
+Reads metadata/control tables to identify what needs to be loaded
         ↓
 Copy Activity + SHIR
-Moves data from SAP/on-prem systems through Self-Hosted Integration Runtime
+Copies data from SAP or on-prem systems through Self-Hosted Integration Runtime
         ↓
 ADLS Gen2 Bronze Layer
-Raw data lands as-is
+Raw data lands as-is for traceability
         ↓
 Databricks Silver Layer
-Data cleaning, standardization, validation
+Data is cleaned, standardized, validated, and structured
         ↓
 Databricks Gold Layer
-Business-ready curated datasets
+Business-ready curated data is prepared
         ↓
 Azure SQL / Synapse
-Structured downstream reporting layer
+Final structured data is made available for downstream use
         ↓
-Power BI / Tableau
+Power BI / Tableau / Reporting
 Dashboards, KPI tracking, ad hoc analysis, and business insights
+```
+
+This flow represents how business reporting needs move from stakeholder conversations into technical pipeline execution and finally into trusted reporting outputs.
+
+---
+
+## Where Python Fits In
+
+Python is useful in this workflow because it can help automate monitoring and validation across pipeline outputs.
+
+In this project, Python is used to simulate how pipeline logs and data quality results can be reviewed before data is trusted for reporting.
+
+Python can help identify:
+
+- Pipeline failures
+- Late or delayed refreshes
+- SLA breaches
+- Long-running jobs
+- Zero-record loads
+- Source-to-target row count mismatches
+- Schema changes
+- Missing mandatory fields
+- Data quality exceptions
+- High-priority reporting risks
+
+The goal is not to replace the pipeline tool. The goal is to use Python as a validation and monitoring layer that helps data teams understand whether pipeline outputs are reliable.
+
+---
+
+## Where SQL Fits In
+
+SQL is used heavily for validating whether data is accurate, complete, and ready for reporting.
+
+SQL checks can be used to validate:
+
+- Source-to-target record counts
+- Duplicate business keys
+- Missing required fields
+- Invalid dates
+- Bronze vs Silver vs Gold layer differences
+- Business rule outputs
+- KPI calculation logic
+- Reporting layer readiness
+
+Example SQL use cases:
+
+```text
+Compare source count vs target count
+Check duplicate product/store/date records
+Validate that mandatory fields are populated
+Confirm that open quantity logic is accurate
+Review whether current inventory records loaded correctly
+Confirm that sales history covers the expected time period
+```
+
+SQL is also used for ad hoc investigation when dashboards show unexpected values or when business users question reporting outputs.
+
+---
+
+## Jira and Confluence Exposure
+
+Jira and Confluence are important because pipeline and reporting work is not only technical. It also requires documentation, ownership, communication, and issue tracking.
+
+### Jira Usage
+
+Jira can be used to track:
+
+- Pipeline development tasks
+- Data validation stories
+- Source-to-target issues
+- Data quality defects
+- Dashboard readiness tasks
+- UAT feedback
+- Business rule clarifications
+- Production support issues
+- Enhancement requests
+
+Example Jira-style work item:
+
+```text
+Story: Validate SAP sales data load into Silver layer
+
+Acceptance Criteria:
+- Source and target record counts are reviewed
+- Required fields are populated
+- Duplicate checks are completed
+- Expected date range is available
+- Output is approved for dashboard testing
+```
+
+### Confluence Usage
+
+Confluence can be used to document:
+
+- Business requirements
+- KPI definitions
+- Source-to-target mappings
+- Field definitions
+- Validation rules
+- Pipeline refresh notes
+- Known limitations
+- UAT sign-off notes
+- Reporting ownership
+
+This documentation helps business and technical teams stay aligned on what is being built, what logic is applied, and how the final dataset should be used.
+
+---
+
+## Business Problem
+
+Business dashboards depend on reliable upstream data.
+
+If a pipeline fails, loads late, produces zero records, or brings mismatched data, downstream dashboards can show inaccurate information.
+
+Common business risks include:
+
+```text
+Dashboard refresh completes with incomplete data
+Sales reporting does not match expected source totals
+Inventory output shows stale or missing records
+Purchase order data does not reconcile
+Business users make decisions using delayed or incorrect data
+Data engineering teams are not alerted early enough
+```
+
+This project demonstrates how pipeline monitoring and validation can reduce those risks.
+
+---
+
+## Technical Objective
+
+The objective of this framework is to monitor whether pipeline outputs are reliable before data is consumed by reporting teams.
+
+The framework focuses on:
+
+- Reading pipeline execution logs
+- Reviewing row count validation results
+- Checking schema validation outputs
+- Detecting failed or delayed pipeline runs
+- Detecting zero-record loads
+- Flagging source-to-target mismatches
+- Identifying schema drift
+- Classifying issue severity
+- Creating exception summaries for review
+
+---
+
+## Pipeline Monitoring Checks
+
+The monitoring logic checks pipeline health across several areas.
+
+### Pipeline Run Status
+
+Checks whether pipeline runs completed successfully.
+
+Example statuses:
+
+```text
+Succeeded
+Failed
+Cancelled
+Skipped
+No Data
+```
+
+Business value:
+
+```text
+Helps identify whether reporting datasets are safe to refresh or need review.
+```
+
+---
+
+### SLA Breach Detection
+
+Checks whether a pipeline started late or ran longer than expected.
+
+Example:
+
+```text
+Expected start time: 5:00 AM
+Actual start time: 6:20 AM
+SLA threshold: 60 minutes
+Status: Late Start
+```
+
+Business value:
+
+```text
+Helps detect delayed dashboard refresh risk before users consume reports.
+```
+
+---
+
+### Zero-Record Load Detection
+
+Checks whether a pipeline loaded zero records when records were expected.
+
+Example:
+
+```text
+Pipeline: inventory_current_load
+Records loaded: 0
+Status: Review Required
+```
+
+Business value:
+
+```text
+Helps prevent dashboards from refreshing with missing or incomplete data.
+```
+
+---
+
+## Data Quality Checks
+
+### Source-to-Target Row Count Validation
+
+Compares the number of records from the source system against the number of records loaded into the target layer.
+
+Example:
+
+```text
+Source rows: 1,250,000
+Target rows: 1,249,980
+Difference: 20 records
+Status: Review
+```
+
+Business value:
+
+```text
+Helps confirm whether the pipeline loaded complete data.
+```
+
+---
+
+### Duplicate Check
+
+Identifies duplicate records that could inflate reporting metrics.
+
+Example:
+
+```text
+Duplicate key:
+product_id + store_id + sales_date
+```
+
+Business value:
+
+```text
+Prevents sales, inventory, or PO metrics from being overstated.
+```
+
+---
+
+### Null / Mandatory Field Check
+
+Validates that critical fields are populated.
+
+Example mandatory fields:
+
+```text
+product_id
+store_id
+sales_date
+po_number
+inventory_load_date
+```
+
+Business value:
+
+```text
+Ensures reporting datasets contain the required fields for dashboard logic.
+```
+
+---
+
+### Schema Drift Detection
+
+Identifies when expected columns are missing, renamed, or changed in data type.
+
+Example:
+
+```text
+Expected column: sales_amount
+Expected data type: numeric
+Actual data type: string
+Status: Data Type Mismatch
+```
+
+Business value:
+
+```text
+Helps prevent downstream model failures when source structures change.
+```
+
+---
+
+## Issue Severity Logic
+
+Not every issue has the same business impact. The framework classifies issues based on severity.
+
+Example severity levels:
+
+```text
+Critical
+High
+Medium
+Low
+```
+
+Example classification:
+
+```text
+Critical:
+A business-critical pipeline failed or a required source column is missing.
+
+High:
+A row count mismatch is above tolerance or a schema data type changed.
+
+Medium:
+A zero-record load occurred or a nullable field changed.
+
+Low:
+A minor delay or non-critical warning occurred.
+```
+
+This helps teams prioritize which issues need immediate review.
+
+---
+
+## Example Python Monitoring Outputs
+
+The Python framework produces reporting-ready output files such as:
+
+```text
+pipeline_sla_results.csv
+row_count_validation_results.csv
+schema_validation_results.csv
+data_quality_issue_summary.csv
+executive_monitoring_summary.csv
+domain_issue_summary.csv
+```
+
+These outputs can be reviewed by data engineering, BI, or analytics teams before dashboards are trusted.
+
+---
+
+## How This Supports BI Reporting
+
+This framework supports reporting readiness by checking whether upstream data is complete, accurate, and timely before dashboards are used.
+
+It helps answer:
+
+```text
+Did the pipeline run successfully?
+Did the data arrive on time?
+Did the expected number of rows load?
+Did the schema change?
+Are required fields populated?
+Are there critical issues before dashboard refresh?
+Which data domain needs review first?
+```
+
+This is especially important when dashboards support sales, inventory, purchase orders, pricing, finance, or operational KPIs.
+
+---
+
+## Connection to Business Users
+
+Business users usually do not care about pipeline internals. They care about whether the report is accurate and available when needed.
+
+This type of monitoring helps translate technical pipeline status into business-friendly information:
+
+```text
+Sales data is ready for reporting
+Inventory data needs review
+PO data loaded late
+Pricing table has a schema issue
+Dashboard refresh should be paused until validation is complete
+```
+
+That communication is where a data analyst with technical exposure adds value.
+
+---
+
+## Portfolio Summary
+
+This project demonstrates my exposure to the data engineering side of analytics delivery.
+
+It shows how I can support the full reporting lifecycle:
+
+```text
+Understand business requirements
+Translate KPIs into data requirements
+Work with Jira and Confluence for documentation and tracking
+Understand source systems and pipeline flow
+Support validation across Bronze, Silver, and Gold layers
+Use SQL for record checks and business-rule validation
+Use Python logic for pipeline monitoring and issue classification
+Review data quality outputs before BI reporting
+Help ensure Power BI, Tableau, and reporting datasets are trusted
+```
+
+This project reflects the hybrid value I bring as a data analyst with business knowledge, BI experience, SQL skills, Python exposure, and practical understanding of data engineering workflows.
