@@ -1,10 +1,8 @@
 """
 ===============================================================================
 Project: Python Data Pipeline SLA & Data Quality Monitoring Framework
-Author: Vineeth Inturi
-
 Purpose:
-    Recreated portfolio example showing how Python can be used to monitor
+    Recreated portfolio example showing how Python is used to monitor
     data pipelines, detect SLA breaches, validate row counts, identify schema
     drift, classify data quality issues, and generate reporting-ready exception
     summaries.
