@@ -523,96 +523,6 @@ This helps data teams move from issue detection to action.
 
 ---
 
-# Sample Input Files
-
-The framework can work with sample inputs like:
-
-~~~
-sample_pipeline_run_logs.csv
-sample_row_count_validation.csv
-sample_schema_validation.csv
-~~~
-
----
-
-## Example Pipeline Run Log Fields
-
-~~~
-pipeline_id
-pipeline_name
-source_system
-target_table
-data_domain
-scheduled_start_time
-actual_start_time
-actual_end_time
-run_status
-records_loaded
-error_message
-~~~
-
----
-
-## Example Row Count Validation Fields
-
-~~~
-validation_date
-source_system
-target_table
-source_row_count
-target_row_count
-~~~
-
----
-
-## Example Schema Validation Fields
-
-~~~
-validation_date
-target_table
-column_name
-expected_data_type
-actual_data_type
-column_exists_flag
-~~~
-
----
-
----
-
-## Example Output: Executive Monitoring Summary
-
-~~~
-total_pipeline_runs
-failed_pipeline_runs
-late_pipeline_runs
-long_running_pipeline_runs
-zero_record_loads
-row_count_mismatches
-schema_issues
-critical_issues
-high_issues
-medium_issues
-low_issues
-~~~
-
----
-
-## Example Output: Data Quality Issue Summary
-
-~~~
-issue_source
-issue_type
-data_domain
-source_system
-target_table
-severity
-priority_score
-issue_description
-recommended_action
-~~~
-
----
 
 # Jira and Confluence Usage
 
@@ -622,7 +532,7 @@ Jira and Confluence are included because data pipeline work is not only technica
 
 ## Jira
 
-Jira can be used to track:
+Jira used to track:
 
 ~~~
 Pipeline development tasks
