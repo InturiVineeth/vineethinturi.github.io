@@ -46,48 +46,6 @@ This project is positioned from the perspective of a data analyst with strong bu
 
 ---
 
-# End-to-End Data Flow
-
-~~~
-Business Users / Stakeholders
-        ↓
-Business requirements, KPIs, and reporting needs
-        ↓
-Jira / Confluence
-User stories, acceptance criteria, mappings, validation rules, documentation
-        ↓
-Data Engineering Team
-Technical requirements and pipeline implementation
-        ↓
-Source Systems
-SAP / on-prem systems / enterprise databases
-        ↓
-Azure Data Factory Pipeline
-Pipeline orchestration and scheduled ingestion
-        ↓
-Lookup Activity
-Reads metadata/control table to determine what should be loaded
-        ↓
-Copy Activity + SHIR
-Moves data from SAP/on-prem systems through Self-Hosted Integration Runtime
-        ↓
-ADLS Gen2 Landing / Bronze Layer
-Raw data lands for traceability and audit
-        ↓
-Databricks Silver Layer
-Data is cleaned, standardized, validated, and structured
-        ↓
-Databricks Gold Layer
-Business-ready curated data is prepared
-        ↓
-Azure SQL / Synapse
-Final structured data is made available for downstream reporting
-        ↓
-Power BI / Tableau / Reporting
-Dashboards, KPI tracking, ad hoc analysis, and business insights
-~~~
-
----
 
 ## Executive Flow Diagram
 
@@ -136,7 +94,7 @@ The purpose of the landing layer is to preserve raw source data for auditability
 
 After the data lands in ADLS Gen2, Databricks can process it and convert it into Delta format for Bronze, Silver, and Gold layers.
 
-A common structure is:
+Layered Structure we followed:
 
 ~~~
 Landing Layer
@@ -168,11 +126,9 @@ Gold Layer
 
 Delta format is commonly used in Databricks because it supports ACID transactions, schema enforcement, schema evolution, time travel, merge/upsert logic, and reliable incremental processing.
 
-Excel files may be used for small business reference files, mapping files, or one-time uploads, but they are usually not preferred for automated enterprise-grade pipelines.
-
 ---
 
-# Where SQL Fits In
+# SQL  
 
 SQL is used to validate whether data is accurate, complete, and ready for reporting.
 
@@ -311,11 +267,9 @@ This produces a business-friendly summary of validation results before reporting
 
 ---
 
-# Where Python Fits In
+# Python 
 
 Python is used as a monitoring and automation layer.
-
-Python supports:
 
 ~~~
 Reading pipeline run logs
@@ -624,19 +578,6 @@ column_exists_flag
 
 ---
 
-# Sample Output Files
-
-The Python workflow can generate outputs like:
-
-~~~
-pipeline_sla_results.csv
-row_count_validation_results.csv
-schema_validation_results.csv
-data_quality_issue_summary.csv
-executive_monitoring_summary.csv
-domain_issue_summary.csv
-~~~
-
 ---
 
 ## Example Output: Executive Monitoring Summary
@@ -692,25 +633,11 @@ Business rule clarification
 Production support tickets
 Enhancement requests
 ~~~
-
-Example Jira story:
-
-~~~
-Story: Validate SAP sales data load into Silver layer
-
-Acceptance Criteria:
-- Source and target record counts are reviewed
-- Required fields are populated
-- Duplicate checks are completed
-- Expected date range is available
-- Output is approved for dashboard testing
-~~~
-
 ---
 
 ## Confluence
 
-Confluence can be used to document:
+Confluence used to document:
 
 ~~~
 Business requirements
@@ -725,30 +652,6 @@ Reporting ownership
 ~~~
 
 ---
-
-# Business Value
-
-This framework helps data and BI teams answer:
-
-~~~
-Did the pipeline run successfully?
-Did the data arrive on time?
-Did the expected number of rows load?
-Did the schema change?
-Are required fields populated?
-Are there critical issues before dashboard refresh?
-Which data domain needs review first?
-~~~
-
-It helps translate technical issues into business-friendly reporting readiness messages:
-
-~~~
-Sales data is ready for reporting
-Inventory data needs review
-PO data loaded late
-Pricing table has a schema issue
-Dashboard refresh should be paused until validation is complete
-~~~
 
 ---
 
