@@ -141,7 +141,7 @@ main > p a:hover {
   background-color: #374151;
 }
 
-/* Experience Snapshot */
+/* Experience / Technical Work Cards */
 .experience-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -169,6 +169,18 @@ main > p a:hover {
   font-size: 15px;
   color: #4b5563;
   margin-bottom: 0;
+}
+
+.experience-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #1f2937;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.experience-card a:hover {
+  text-decoration: underline;
 }
 
 /* Technical Toolkit */
