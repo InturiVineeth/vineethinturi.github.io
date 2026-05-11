@@ -7,6 +7,16 @@
   <title>Vineeth Inturi | Data Analyst Portfolio</title>
 
   <link rel="stylesheet" href="style.css">
+
+  <!-- Google Analytics Tracking Code -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 
 <body>
@@ -14,7 +24,15 @@
     <a href="index.html">Home</a>
     <a href="projects.html">Projects</a>
     <a href="experience.html">Experience</a>
-    <a href="Resume/VineethInturi_Resume.pdf" target="_blank">Resume</a>
+
+    <a href="Resume/VineethInturi_Resume.pdf"
+       target="_blank"
+       onclick="gtag('event', 'resume_click', {
+         event_category: 'engagement',
+         event_label: 'Resume PDF from Navigation'
+       });">
+       Resume
+    </a>
   </nav>
 
   <main>
@@ -41,7 +59,13 @@
       </p>
 
       <div class="hero-buttons">
-        <a href="projects.html">View Projects</a>
+        <a href="projects.html"
+           onclick="gtag('event', 'view_projects_click', {
+             event_category: 'engagement',
+             event_label: 'View Projects Button from Home Page'
+           });">
+           View Projects
+        </a>
       </div>
     </section>
 
@@ -121,8 +145,22 @@
       </p>
 
       <p>
-        <a href="mailto:vineeinturi98@gmail.com">Email Me</a>
-        <a href="https://www.linkedin.com/in/vineeth99" target="_blank">LinkedIn</a>
+        <a href="mailto:vineeinturi98@gmail.com"
+           onclick="gtag('event', 'email_click', {
+             event_category: 'contact',
+             event_label: 'Email Me from Home Page'
+           });">
+           Email Me
+        </a>
+
+        <a href="https://www.linkedin.com/in/vineeth99"
+           target="_blank"
+           onclick="gtag('event', 'linkedin_click', {
+             event_category: 'contact',
+             event_label: 'LinkedIn from Home Page'
+           });">
+           LinkedIn
+        </a>
       </p>
     </div>
   </main>
