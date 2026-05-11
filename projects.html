@@ -7,6 +7,16 @@
   <title>Projects | Vineeth Inturi</title>
 
   <link rel="stylesheet" href="style.css">
+
+  <!-- Google Analytics Tracking Code -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 
 <body>
@@ -14,21 +24,30 @@
     <a href="index.html">Home</a>
     <a href="projects.html">Projects</a>
     <a href="experience.html">Experience</a>
-    <a href="Resume/VineethInturi_Resume.pdf" target="_blank">Resume</a>
+
+    <a href="Resume/VineethInturi_Resume.pdf"
+       target="_blank"
+       onclick="gtag('event', 'resume_click', {
+         event_category: 'engagement',
+         event_label: 'Resume PDF from Projects Page'
+       });">
+       Resume
+    </a>
   </nav>
 
   <main>
-  <section class="hero">
-  <h1>Projects & Technical Case Studies</h1>
+    <section class="hero">
+      <h1>Projects & Technical Case Studies</h1>
 
-  <h2>Analytics Engineering | SQL | Python | BI Dashboards</h2>
+      <h2>Analytics Engineering | SQL | Python | BI Dashboards</h2>
 
-  <p>
-    Portfolio of technical case studies covering SAP data validation, SQL transformation
-    logic, Python pipeline monitoring, analytics engineering documentation, KPI governance,
-    and BI-ready reporting solutions.
-  </p>
-</section>
+      <p>
+        Portfolio of technical case studies covering SAP data validation, SQL transformation
+        logic, Python pipeline monitoring, analytics engineering documentation, KPI governance,
+        and BI-ready reporting solutions.
+      </p>
+    </section>
+
     <h3>Featured Technical Work</h3>
 
     <div class="experience-grid">
@@ -39,8 +58,13 @@
           LAG, DENSE_RANK, margin %, pricing variance, and category-level profitability.
         </p>
         <p>
-          <a href="https://github.com/InturiVineeth/vineethinturi.github.io/blob/main/SQL-Analytics/product_performance_margin_analysis.sql" target="_blank">
-            View SQL File
+          <a href="https://github.com/InturiVineeth/vineethinturi.github.io/blob/main/SQL-Analytics/product_performance_margin_analysis.sql"
+             target="_blank"
+             onclick="gtag('event', 'project_sql_file_click', {
+               event_category: 'project_engagement',
+               event_label: 'SQL Product Performance Margin Analysis'
+             });">
+             View SQL File
           </a>
         </p>
       </div>
@@ -53,12 +77,22 @@
           and reporting-readiness checks across Bronze, Silver, and Gold data layers.
         </p>
         <p>
-          <a href="https://github.com/InturiVineeth/vineethinturi.github.io/blob/main/Python-Analytics/pipeline_sla_quality_monitoring_framework.py" target="_blank">
-            View Python Script
+          <a href="https://github.com/InturiVineeth/vineethinturi.github.io/blob/main/Python-Analytics/pipeline_sla_quality_monitoring_framework.py"
+             target="_blank"
+             onclick="gtag('event', 'project_python_script_click', {
+               event_category: 'project_engagement',
+               event_label: 'Python Pipeline SLA Quality Monitoring Framework'
+             });">
+             View Python Script
           </a>
           |
-          <a href="https://github.com/InturiVineeth/vineethinturi.github.io/blob/main/Python-Analytics/pipeline_validation_data_quality_monitoring_framework.md" target="_blank">
-            View Documentation
+          <a href="https://github.com/InturiVineeth/vineethinturi.github.io/blob/main/Python-Analytics/pipeline_validation_data_quality_monitoring_framework.md"
+             target="_blank"
+             onclick="gtag('event', 'project_python_documentation_click', {
+               event_category: 'project_engagement',
+               event_label: 'Python Pipeline Validation Documentation'
+             });">
+             View Documentation
           </a>
         </p>
       </div>
@@ -71,8 +105,13 @@
           data quality checks, business rules, and BI-ready reporting layers.
         </p>
         <p>
-          <a href="https://github.com/InturiVineeth/vineethinturi.github.io/blob/main/Analytics-Engineering/enterprise_sap_snowflake_analytics_engineering_framework.md" target="_blank">
-            View Documentation
+          <a href="https://github.com/InturiVineeth/vineethinturi.github.io/blob/main/Analytics-Engineering/enterprise_sap_snowflake_analytics_engineering_framework.md"
+             target="_blank"
+             onclick="gtag('event', 'project_analytics_engineering_click', {
+               event_category: 'project_engagement',
+               event_label: 'Enterprise SAP Snowflake Analytics Engineering Framework'
+             });">
+             View Documentation
           </a>
         </p>
       </div>
@@ -84,8 +123,13 @@
           sales ranking, budget variance, margin labels, and new item rollout tracking.
         </p>
         <p>
-          <a href="https://github.com/InturiVineeth/vineethinturi.github.io/blob/main/Analytics-Engineering/tableau_reporting_modeling_approach.md" target="_blank">
-            View Tableau Logic
+          <a href="https://github.com/InturiVineeth/vineethinturi.github.io/blob/main/Analytics-Engineering/tableau_reporting_modeling_approach.md"
+             target="_blank"
+             onclick="gtag('event', 'project_tableau_logic_click', {
+               event_category: 'project_engagement',
+               event_label: 'Tableau Reporting Modeling Approach'
+             });">
+             View Tableau Logic
           </a>
         </p>
       </div>
@@ -98,8 +142,13 @@
           employee readiness, and project automation candidates.
         </p>
         <p>
-          <a href="https://github.com/InturiVineeth/vineethinturi.github.io/blob/main/Analytics-Engineering/ai_workforce_project_readiness_analysis.md" target="_blank">
-            View AI Readiness Case Study
+          <a href="https://github.com/InturiVineeth/vineethinturi.github.io/blob/main/Analytics-Engineering/ai_workforce_project_readiness_analysis.md"
+             target="_blank"
+             onclick="gtag('event', 'project_ai_readiness_click', {
+               event_category: 'project_engagement',
+               event_label: 'AI Workforce Project Readiness Analysis'
+             });">
+             View AI Readiness Case Study
           </a>
         </p>
       </div>
